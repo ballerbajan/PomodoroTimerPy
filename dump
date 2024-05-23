@@ -1,0 +1,2 @@
+# self.timerThread = threading.Thread(target= self.timer, args= (8,))
+        # self.timerThread.start()
