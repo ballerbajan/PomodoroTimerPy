@@ -44,9 +44,13 @@ class PomodoroTimer:
     def timer(self):
         self.startButton.config(state=tk.DISABLED)
         if self.isRunning == True:
+            #clock formating
+            second = self.currentTime % 60
+            minute = (self.currentTime // 60) % 60
+            hour = self.currentTime // (60 * 60)
             print ("running")
             if self.currentTime > -1:
-                self.timerLabel.config(text=self.currentTime)
+                self.timerLabel.config(text=(str(hour) + ":" + str(minute) + ":"+ str(second)))
                 self.currentTime -= 1
                 self.masterWindow.after(1000, self.timer)
             elif self.currentTime == -1:
